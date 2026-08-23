@@ -1,0 +1,9 @@
+# Confirm actual pins on the physical Pi before wiring.
+camera: CSI_or_USB
+servo_pan: TBD
+servo_tilt: TBD
+ultrasonic_trigger: TBD
+ultrasonic_echo: TBD
+dht11_data: TBD
+ldr: TBD
+led: TBD
