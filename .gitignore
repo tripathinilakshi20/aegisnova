@@ -1,7 +1,74 @@
+# Python
 venv/
 .venv/
 __pycache__/
 *.pyc
-*.db
+*.pyo
+*.pyd
+
+# Environment / local data
 .env
+*.db
+
+# Training outputs
 runs/
+ai_model/runs/
+
+# Large datasets
+ai_model/dataset/AegisNova_45class/
+ai_model/dataset/AegisNova_FINAL_36CLASS/
+ai_model/dataset/AegisNova_FINAL_36CLASS_V2/
+ai_model/dataset/AegisNova_MVP/
+ai_model/dataset/AegisNova_MVP_9CLASS/
+ai_model/dataset/AegisNova_MVP_9CLASS_Balanced/
+ai_model/dataset/AegisNova_MVP_Balanced/
+ai_model/dataset/AegisNova_MVP_Balanced_BACKUP/
+ai_model/dataset/AegisNova_MVP_Balanced_PRE_POLYGON_CONVERSION/
+ai_model/dataset/animal_detection_v3/
+ai_model/dataset/animal_detection_v3_clean/
+ai_model/dataset/baboon_aegisnova/
+ai_model/dataset/baboon_export/
+ai_model/dataset/bird_aegisnova/
+ai_model/dataset/bird_detect_v2_export/
+ai_model/dataset/caterpillar_aegisnova/
+ai_model/dataset/caterpillar_export/
+ai_model/dataset/locust_aegisnova/
+ai_model/dataset/locust_export/
+ai_model/dataset/mouse_aegisnova/
+ai_model/dataset/mouse_export/
+ai_model/dataset/pig_aegisnova/
+ai_model/dataset/pig_export/
+ai_model/dataset/rabbit_aegisnova/
+ai_model/dataset/rabbit_export/
+ai_model/dataset/raccoon_aegisnova/
+ai_model/dataset/raccoon_export/
+ai_model/dataset/rat_aegisnova/
+ai_model/dataset/rat_export/
+ai_model/dataset/real_world_export/
+ai_model/dataset/sheep_aegisnova/
+ai_model/dataset/sheep_export/
+
+# Dataset archives
+*.zip
+
+# Local test images
+ai_model/test_images/
+
+# Local YOLO weights
+*.pt
+
+# Dataset/build/audit artifacts
+Animal_Detection.v7-dataset-3.0.yolo26/
+audit_final_36class.py
+audit_final_36class_v2.py
+build_final_36class.py
+build_final_36class_v2.py
+check_clean_dataset.py
+check_labels.py
+class_image_distribution.py
+class_image_distribution_v2.py
+clean_dataset.py
+object_density_analysis.py
+train_multiclass_analysis.py
+scripts/build_unified_45class.py
+ai_model/dataset/aegisnova_classes.txt

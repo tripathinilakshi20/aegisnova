@@ -2,6 +2,43 @@ path: .
 train: images/train
 val: images/val
 test: images/test
+
+nc: 36
+
 names:
-  0: person
-  1: cow
+  0: Rhino
+  1: Badger
+  2: Bison
+  3: Black_Bear
+  4: Brown_Bear
+  5: Cats
+  6: Cow
+  7: Crocodile
+  8: Deer
+  9: Dog
+  10: Elephant
+  11: Fox
+  12: Gorilla
+  13: Hippopotamus
+  14: Human
+  15: Hyena
+  16: Jaguar
+  17: Kangaroo
+  18: Leopard
+  19: Lion
+  20: Moose
+  21: Nilgai
+  22: Panther
+  23: Polar_Bear
+  24: Porcupine
+  25: Puma
+  26: Tiger
+  27: Wild_Boar
+  28: Wolf
+  29: Locust
+  30: Pig
+  31: Rat
+  32: Mouse
+  33: Caterpillar
+  34: Baboon
+  35: Rabbit
