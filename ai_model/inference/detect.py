@@ -8,7 +8,7 @@ from ultralytics import YOLO
 # --------------------------------------------------
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-MODEL_PATH = PROJECT_ROOT / "models" / "trained" / "aegisnova_best.pt"
+MODEL_PATH = PROJECT_ROOT / "models" / "trained" / "best.pt"
 
 model = YOLO(str(MODEL_PATH))
 

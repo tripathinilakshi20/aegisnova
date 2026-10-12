@@ -14,7 +14,7 @@ MODEL_PATH = (
     PROJECT_ROOT
     / "models"
     / "trained"
-    / "aegisnova_best.pt"
+    / "best.pt"
 )
 
 DATASET_YAML = Path(
