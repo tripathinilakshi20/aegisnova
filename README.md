@@ -1,48 +1,53 @@
-# AEGISNOVA
-
-AI + Edge Intelligence + IoT + Digital Twin prototype.
-
-## Project Pipeline
-
-Hardware -> YOLO-based detection -> dataset training/evaluation -> Raspberry Pi deployment -> backend -> dashboard -> integration -> Digital Twin.
-
 ## AI Model
 
-AegisNova uses a YOLOv8n object-detection model trained for 36 classes.
+AegisNova currently uses a trained YOLO object-detection model stored as `ai_model/models/trained/best.pt`.
 
-The final trained model is: ai_model/models/trained/aegisnova_best.pt
+- Model file: `ai_model/models/trained/best.pt`
+- Number of classes: 30
+- Framework: Ultralytics YOLO
+- Inference entry point: `ai_model/inference/detect.py`
+- Evaluation entry point: `ai_model/training/evaluate.py`
 
-Model weights are intentionally excluded from Git because of their binary size.
+The trained model weights are included in the `feat/aegisnova-final-model` branch.
 
 ## Classes
 
-Rhino, Badger, Bison, Black_Bear, Brown_Bear, Cats, Cow, Crocodile, Deer, Dog, Elephant, Fox, Gorilla, Hippopotamus, Human, Hyena, Jaguar, Kangaroo, Leopard, Lion, Moose, Nilgai, Panther, Polar_Bear, Porcupine, Puma, Tiger, Wild_Boar, Wolf, Locust, Pig, Rat, Mouse, Caterpillar, Baboon, Rabbit.
+The model supports the following 30 classes:
+
+Rhino, badger, bison, black_bear, brown_bear, cats, cow, crocodile, deer, dog, elephant, fox, gorilla, hippopotamus, humans, hyena, jaguar, kangaroo, leopard, lion, moose, nilgai, panther, polar_bear, porcupine, puma, python, tiger, wild_boar, wolf.
+
+**Note:** Use the class names and IDs returned by the model. Keep the mapping consistent across inference, risk assessment, and backend integration.
 
 ## Training
 
-Training entry point: ai_model/training/train.py
+Training entry point: `ai_model/training/train.py`
 
-- YOLOv8n
-- 50 epochs
-- Image size: 640
-- Batch size: 16
-- Patience: 12
-- Seed: 42
+The existing trained model is being reused. Retraining is not required if the checkpoint loads and inference works correctly.
 
 ## Evaluation
 
-Evaluation entry point: ai_model/training/evaluate.py
+Evaluation entry point: `ai_model/training/evaluate.py`
+
+The evaluation dataset configuration must match the model's 30-class mapping before evaluation results can be considered valid.
 
 ## Inference
 
-Inference entry point: ai_model/inference/detect.py
+Inference entry point: `ai_model/inference/detect.py`
 
-The inference module returns class ID, class name, confidence and bounding-box coordinates.
+The inference module returns:
+- Class ID
+- Class name
+- Confidence score
+- Bounding-box coordinates
+
+The model should be tested on sample images, including images containing humans, before integration.
 
 ## Dataset
 
-The complete training dataset is not stored in this repository because of its size. The repository contains the dataset configuration and final class mapping, while the actual dataset is maintained separately.
+The complete training dataset is maintained separately because of its size. The dataset configuration must match the class names and ordering of the trained model.
 
 ## Deployment
 
-The trained model is intended for integration with the AegisNova edge-computing pipeline and eventual deployment on Raspberry Pi hardware.
+The trained model is intended for integration with the AegisNova edge-computing pipeline and deployment on Raspberry Pi hardware.
+
+Raspberry Pi compatibility and inference performance must be verified on the target device before deployment is considered complete.
